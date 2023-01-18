@@ -1,0 +1,12 @@
+delimiter $$
+create procedure moneyTransfer(in sid int,in rid int,in amount decimal(9,2),out sbal decimal(9,2),out rbal decimal(9,2))
+begin 
+update account set balance=balance+amount where accNo=rid;
+update account set balance=balance-amount where accNo=sid;
+select balance into sbal from account where accNo=sid;
+select balance into rbal from account where accNo=rid;
+end $$
+
+delimiter ;
+
+call moneyTransfer(1,2,5000,@s,@r);
