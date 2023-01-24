@@ -24,12 +24,27 @@ public class User {
 	
 	
 	public User(String firstName, String lastName, String email, Department department, LocalDate dob, double salary) {
-		super();
+		
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.department = department;
 		this.dob = dob;
+		this.salary = salary;
+	}
+
+
+	public User() {
+		
+	}
+
+
+	
+	public User(Integer id, String firstName, String lastName, double salary) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.salary = salary;
 	}
 
